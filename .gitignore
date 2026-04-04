@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Environment
+.env
+.venv
+env/
+venv/
+
+# VS Code
+.vscode/
+
+# Mac / Windows
+.DS_Store
+Thumbs.db
+
+# Data (視情況)
+data/
+*.csv
+*.xlsx
+
+# Outputs (模擬結果/圖)
+outputs/
+*.png
+
+# Logs
+*.log

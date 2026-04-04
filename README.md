@@ -2,8 +2,12 @@
 
 ## 📄 Project Deliverables
 
-- [One-page Summary](docs/All_in_vs_DCA_one_page(English).pdf)
-- [Slides](docs/All-in_vs_DCA_Analytics(Traditional Chinese).pdf)
+## Project Deliverables
+
+- [One-page Summary](docs/one_page_en.pdf)
+- [Slides (PDF)](docs/slides_tc.pdf)
+- [Slides (PowerPoint)](docs/slides_tc.pptx)
+
 
 ## 🎯 Problem
 

@@ -1,5 +1,9 @@
 # 📈 All-in vs DCA: When Does Timing Matter?
 
+## 📄 Project Deliverables
+
+- [One-page Summary](docs/All_in_vs_DCA_one_page(English).pdf)
+- [Slides](docs/All-in_vs_DCA_Analytics(Traditional Chinese).pptx)
 
 ## 🎯 Problem
 

@@ -79,7 +79,7 @@ We analyze the problem using four methods:
 ### 🎬 3. Monte Carlo  Comparison: GBM vs Bootstrap 
 Simulated 100,000 return paths using two approaches:
 
-<p align="center">
+<!-- <p align="center">
   <b>Bootstrap (Historical Resampling)</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <b>GBM (Parametric Simulation)</b>
 </p>
@@ -87,10 +87,27 @@ Simulated 100,000 return paths using two approaches:
 <p align="center">
   <img src="docs/cagr_bootstrap_animation.gif" width="400">
   <img src="docs/cagr_gbm_animation.gif" width="400">
-</p>
+</p> -->
 
-- Bootstrap captures empirical market behavior  
+<table>
+  <tr>
+    <th align="center">GBM (Parametric Simulation)</th>
+    <th align="center">Bootstrap (Historical Resampling)</th>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="docs/cagr_gbm_animation.gif" width="400">
+    </td>
+    <td align="center">
+      <img src="docs/cagr_bootstrap_animation.gif" width="400">
+    </td>
+  </tr>
+</table>
+
+
 - GBM assumes normally distributed returns  
+- Bootstrap captures empirical market behavior  
+
 
 **Key observations:**
 - All-in wins ~65% of simulations  
@@ -148,6 +165,7 @@ This framework helps evaluate how to deploy capital under uncertain market condi
 ---
 
 ## ⚠️ Limitations
+
 - GBM assumes normally distributed returns
 - Bootstrap assumes historical resampling is informative
 - Transaction costs and taxes are excluded
@@ -164,19 +182,21 @@ This framework helps evaluate how to deploy capital under uncertain market condi
 
 ---
 
-```md
+
 ## ⚙️ Environment Setup 
 Minimal dependencies are intentionally specified for reproducibility.
 
-```bash
+```sh
 pip install -r requirements.txt
+```
 
-```md
 ## 🛠 Visualization Pipeline
 GIF animations are generated using a custom script:
 
-```bash
+```sh
 python scripts/make_gif.py
+```
+
 
 
 

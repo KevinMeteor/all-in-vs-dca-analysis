@@ -75,7 +75,7 @@ Peak-entry analysis shows that DCA becomes more competitive under unfavorable ti
 - DCA achieves similar or slightly higher average return
 - Differences persist across 10–30 year horizons
 
-## 🎬 Horizon Comparison: Bootstrap vs GBM
+### 🎬 Horizon Comparison: Bootstrap vs GBM
 
 <p align="center">
   <b>Bootstrap (Historical Resampling)</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -83,8 +83,8 @@ Peak-entry analysis shows that DCA becomes more competitive under unfavorable ti
 </p>
 
 <p align="center">
-  <img src="docs/cagr_bootstrap.gif" width="350">
-  <img src="docs/cagr_gbm.gif" width="350">
+  <img src="docs/cagr_bootstrap_animation.gif" width="350">
+  <img src="docs/cagr_gbm_animation.gif" width="350">
 </p>
 
 
@@ -153,12 +153,12 @@ Minimal dependencies are intentionally specified for reproducibility.
 ```bash
 pip install -r requirements.txt
 
+# ---
+# 🛠 Visualization Pipeline
 
-## 🛠 Visualization Pipeline
+# GIF animations are generated using a custom script:
 
-GIF animations are generated using a custom script:
-
-```bash
+# ```bash
 python scripts/make_gif.py
 
 ---

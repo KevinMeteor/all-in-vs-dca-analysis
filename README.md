@@ -1,8 +1,8 @@
 # 📈 All-in vs DCA: When Does Timing Matter?
+A decision-oriented investment analysis project comparing lump-sum investing and dollar-cost averaging under timing uncertainty.
+
 
 ## 📄 Project Deliverables
-
-## Project Deliverables
 
 - [One-page Summary (PDF)](docs/one_page_en.pdf)
 - [Slides (PDF)](docs/slides_tc.pdf)
@@ -15,8 +15,10 @@
 
 Investors often face a key decision:
 
-- Invest all capital at once (All-in)?
-- Or spread investment over time (DCA)?
+- Invest all capital at once (All-in)
+- Or spread investment over time (DCA)
+
+**Which strategy performs better under uncertainty?**
 
 This project evaluates the trade-off between:
 
@@ -34,9 +36,7 @@ We analyze the problem using four methods:
    Compare yearly performance (2009–2025)
 
 2. **Peak Entry Scenario**  
-   Evaluate performance when entering near market highs
-
-
+   Analyze outcomes when investing near market highs
 
 3. **Monte Carlo Simulation (GBM & Bootstrap)**  
    Simulate long-term outcomes (3–30 years)
@@ -51,31 +51,33 @@ We analyze the problem using four methods:
 ### 1. All-in vs DCA (Overall Market)
 - All-in → higher expected return
 - DCA → lower downside risk
+- Near market highs, DCA becomes more competitive
+- Initial entry timing materially affects long-term outcomes
 
 ---
 
 ### 2. Peak Entry Scenario (Near Market Highs)
-- DCA outperforms in ~55% of cases
-- DCA reduces drawdown and tail risk
-- In some cases, DCA turns losses into gains
-
 
 <p align="center">
   <img src="docs/peak_dashboard.png" width="700">
 </p>
 
-This dashboard summarizes strategy performance under peak-entry scenarios.
-Peak-entry analysis shows that DCA becomes more competitive under unfavorable timing conditions.
 
+- DCA outperforms in ~55% of cases
+- DCA reduces drawdown and tail risk
+- In some cases, DCA turns losses into gains
+
+#### Quadrant Plot
+- Q1: Both positive → All-in tends to outperform  
+- Q2: DCA positive, All-in negative → DCA avoids losses  
+- Q3: Both negative → DCA reduces losses  
+- Q4: No observed case where All-in outperforms while DCA loses  
 
 ---
 
-### 3. Monte Carlo (Long-term)
-- All-in wins ~65% of the time
-- DCA achieves similar or slightly higher average return
-- Differences persist across 10–30 year horizons
 
-### 🎬 Horizon Comparison: Bootstrap vs GBM
+### 🎬 3. Monte Carlo  Comparison: GBM vs Bootstrap 
+Simulated 100,000 return paths using two approaches:
 
 <p align="center">
   <b>Bootstrap (Historical Resampling)</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -83,21 +85,20 @@ Peak-entry analysis shows that DCA becomes more competitive under unfavorable ti
 </p>
 
 <p align="center">
-  <img src="docs/cagr_bootstrap_animation.gif" width="350">
-  <img src="docs/cagr_gbm_animation.gif" width="350">
+  <img src="docs/cagr_bootstrap_animation.gif" width="400">
+  <img src="docs/cagr_gbm_animation.gif" width="400">
 </p>
 
+- Bootstrap captures empirical market behavior  
+- GBM assumes normally distributed returns  
 
-- Bootstrap reflects empirical market behavior based on historical data  
-- GBM assumes normally distributed returns and smooth stochastic dynamics 
-
-This comparison highlights how modeling assumptions affect long-term return distributions.
-
-<!-- ![GBM](docs/cagr_gbm_animation.gif)
-
-
-![Bootstrap](docs/cagr_bootstrap_animation.gif) -->
-
+**Key observations:**
+- All-in wins ~65% of simulations  
+- Short horizon (<10 years):  
+  - DCA achieves comparable or slightly higher average returns  
+  - All-in exhibits higher risk  
+- Long horizon (≥10 years):  
+  - Differences diminish, but structural patterns remain
 
 
 ---
@@ -131,11 +132,27 @@ Even over 30 years, relative performance is largely determined at entry.
 
 ---
 
-⚠️ Limitations
-IID assumption in bootstrap
-Normality assumption in GBM
-No transaction cost
-No regime modeling
+
+## Repository Structure
+- `docs/`: final deliverables and visualization assets
+- `notebooks/`: analysis notebook and exports
+- `src/`: modularized analysis and backtest code
+- `scripts/`: utility scripts such as GIF generation
+- `main.py`: project entry point
+
+---
+
+## Practical Use
+This framework helps evaluate how to deploy capital under uncertain market conditions, especially when entry timing is unfavorable.
+
+---
+
+## ⚠️ Limitations
+- GBM assumes normally distributed returns
+- Bootstrap assumes historical resampling is informative
+- Transaction costs and taxes are excluded
+- Regime shifts are not explicitly modeled
+
 
 ---
 
@@ -147,19 +164,20 @@ No regime modeling
 
 ---
 
-## ⚙️ Environment Setup
+```md
+## ⚙️ Environment Setup 
 Minimal dependencies are intentionally specified for reproducibility.
 
 ```bash
 pip install -r requirements.txt
 
-# ---
-# 🛠 Visualization Pipeline
+```md
+## 🛠 Visualization Pipeline
+GIF animations are generated using a custom script:
 
-# GIF animations are generated using a custom script:
-
-# ```bash
+```bash
 python scripts/make_gif.py
 
----
+
+
 

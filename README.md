@@ -59,7 +59,7 @@ We analyze the problem using four methods:
 ### 2. Peak Entry Scenario (Near Market Highs)
 
 <p align="center">
-  <img src="docs/peak_dashboard.png" width="700">
+  <img src="docs/peak_dashboard.png" width="750">
 </p>
 
 
@@ -96,10 +96,10 @@ Simulated 100,000 return paths using two approaches:
   </tr>
   <tr>
     <td align="center">
-      <img src="docs/cagr_gbm_animation.gif" width="400">
+      <img src="docs/cagr_gbm_animation.gif" width="450">
     </td>
     <td align="center">
-      <img src="docs/cagr_bootstrap_animation.gif" width="400">
+      <img src="docs/cagr_bootstrap_animation.gif" width="450">
     </td>
   </tr>
 </table>
@@ -150,6 +150,25 @@ Even over 30 years, relative performance is largely determined at entry.
 ---
 
 
+## 📓 Exploratory Analysis
+
+For full analysis and detailed simulations, see the notebook:
+
+- [Full Analysis Notebook](notebooks/results.ipynb)
+
+
+This notebook includes:
+- Data processing
+- Backtesting implementation
+- Monte Carlo simulation (GBM & Bootstrap)
+- Visualization and result interpretation
+
+The notebook serves as a transparent and reproducible implementation of the analysis.
+
+
+---
+
+
 ## Repository Structure
 - `docs/`: final deliverables and visualization assets
 - `notebooks/`: analysis notebook and exports
@@ -157,7 +176,8 @@ Even over 30 years, relative performance is largely determined at entry.
 - `scripts/`: utility scripts such as GIF generation
 - `main.py`: project entry point
 
----
+
+--- 
 
 ## Practical Use
 This framework helps evaluate how to deploy capital under uncertain market conditions, especially when entry timing is unfavorable.

@@ -28,6 +28,7 @@ data/
 # Outputs (模擬結果/圖)
 outputs/
 *.png
+!docs/*.png
 
 # Logs
 *.log

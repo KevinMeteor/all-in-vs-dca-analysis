@@ -4,9 +4,11 @@
 
 ## Project Deliverables
 
-- [One-page Summary](docs/one_page_en.pdf)
+- [One-page Summary (PDF)](docs/one_page_en.pdf)
 - [Slides (PDF)](docs/slides_tc.pdf)
 - [Slides (PowerPoint)](docs/slides_tc.pptx)
+
+
 
 
 ## 🎯 Problem
@@ -34,6 +36,8 @@ We analyze the problem using four methods:
 2. **Peak Entry Scenario**  
    Evaluate performance when entering near market highs
 
+
+
 3. **Monte Carlo Simulation (GBM & Bootstrap)**  
    Simulate long-term outcomes (3–30 years)
 
@@ -55,12 +59,46 @@ We analyze the problem using four methods:
 - DCA reduces drawdown and tail risk
 - In some cases, DCA turns losses into gains
 
+
+<p align="center">
+  <img src="docs/peak_dashboard.png" width="700">
+</p>
+
+This dashboard summarizes strategy performance under peak-entry scenarios.
+Peak-entry analysis shows that DCA becomes more competitive under unfavorable timing conditions.
+
+
 ---
 
 ### 3. Monte Carlo (Long-term)
 - All-in wins ~65% of the time
 - DCA achieves similar or slightly higher average return
 - Differences persist across 10–30 year horizons
+
+## 🎬 Horizon Comparison: Bootstrap vs GBM
+
+<p align="center">
+  <b>Bootstrap (Historical Resampling)</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>GBM (Parametric Simulation)</b>
+</p>
+
+<p align="center">
+  <img src="docs/cagr_bootstrap.gif" width="350">
+  <img src="docs/cagr_gbm.gif" width="350">
+</p>
+
+
+- Bootstrap reflects empirical market behavior based on historical data  
+- GBM assumes normally distributed returns and smooth stochastic dynamics 
+
+This comparison highlights how modeling assumptions affect long-term return distributions.
+
+<!-- ![GBM](docs/cagr_gbm_animation.gif)
+
+
+![Bootstrap](docs/cagr_bootstrap_animation.gif) -->
+
+
 
 ---
 
@@ -106,3 +144,22 @@ No regime modeling
 - Regime-switching models  
 - Multi-asset portfolios  
 - Real-world constraints (costs, taxes)
+
+---
+
+## ⚙️ Environment Setup
+Minimal dependencies are intentionally specified for reproducibility.
+
+```bash
+pip install -r requirements.txt
+
+
+## 🛠 Visualization Pipeline
+
+GIF animations are generated using a custom script:
+
+```bash
+python scripts/make_gif.py
+
+---
+
